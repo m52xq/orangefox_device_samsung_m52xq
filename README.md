@@ -1,4 +1,4 @@
-# TWRP Device Tree for Samsung Galaxy M52 5G
+# OrangeFox Device Tree for Samsung Galaxy M52 5G
 
 The Galaxy M52 5G (codenamed _"m52xq"_) is an upper-mid-range smartphone from Samsung.
 
@@ -38,23 +38,24 @@ Available at [https://github.com/BlackMesa123/android_kernel_samsung_sm7325/tree
 
 ## How to build
 
-This device tree was tested and is fully compatible with [minimal-manifest-twrp](https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp)
+This device tree was tested and is fully compatible with [OrangeFox-manifest](https://gitlab.com/OrangeFox/sync)
 
-1. Set up the build environment following the instructions [here](https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp/blob/twrp-12.1/README.md#getting-started)
+1. Set up the build environment following the instructions [here](https://wiki.orangefox.tech/en/dev/building)
 
 2. In the root folder of the fetched repo, clone the device tree:
 
 ```bash
-git clone https://github.com/saadelasfur/android_device_samsung_m52xq.git -b android-12.1 device/samsung/m52xq
+git clone https://github.com/saadelasfur/orangefox_device_samsung_m52xq.git -b fox_12.1 device/samsung/m52xq
 ```
 
 3. To build:
 
 ```bash
 export ALLOW_MISSING_DEPENDENCIES=true
+export FOX_BUILD_DEVICE=m52xq
 . build/envsetup.sh
 lunch twrp_m52xq-eng
-mka recoveryimage
+mka adbd recoveryimage
 ```
 
 ## Copyright
